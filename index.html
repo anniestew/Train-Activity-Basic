@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Train Times</title>
+
+    <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyA9EQP9WUtQY2oxkYJRBumONuvfR8Fvtb0",
+            authDomain: "first-database-ff4ff.firebaseapp.com",
+            databaseURL: "https://first-database-ff4ff.firebaseio.com",
+            projectId: "first-database-ff4ff",
+            storageBucket: "first-database-ff4ff.appspot.com",
+            messagingSenderId: "154222296084"
+        };
+        firebase.initializeApp(config);
+    </script>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="jumbotron jumbotron-fluid">
+                    <div class="container">
+                        <h1 class="display-4">Train Times!</h1>
+                        <p class="lead">Choo choo.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Train Name</th>
+                            <th scope="col">Destination</th>
+                            <th scope="col">Frequencey (min)</th>
+                            <th scope="col">Next Arrival</th>
+                            <th scope="col">Minutes Away</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <form>
+            <div class="form-group">
+                <label for="formGroupExampleInput">Train Name</label>
+                <input type="text" class="form-control" id="name-input" placeholder="Name">
+            </div>
+            <div class="form-group">
+                <label for="formGroupExampleInput2">Destination</label>
+                <input type="text" class="form-control" id="destination-input" placeholder="Destination">
+            </div>
+            <div class="form-group">
+                <label for="formGroupExampleInput2">Frequency (min)</label>
+                <input type="text" class="form-control" id="frequency-input" placeholder="Frequency (min)">
+            </div>
+            <div class="form-group">
+                <label for="formGroupExampleInput2">Next Arrival</label>
+                <input type="text" class="form-control" id="arrival-input" placeholder="Next Arrival">
+            </div>
+            <div class="form-group">
+                <label for="formGroupExampleInput2">Minutes Away</label>
+                <input type="text" class="form-control" id="minutes-input" placeholder="Minutes Away">
+            </div>
+        </form>
+        <button type="button" class="btn btn-dark" id="submit">Submit</button>
+    </div>
+   
+    <script src="https://code.jquery.com/jquery-3.4.0.min.js" integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"></script>
+    <script src="https://rawgit.com/moment/moment/2.2.1/min/moment.min.js"></script>
+    <script src="javascript.js"></script>
+</body>
+
+</html>
