@@ -8,20 +8,6 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>Train Times</title>
-
-    <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
-    <script>
-        // Initialize Firebase
-        var config = {
-            apiKey: "AIzaSyA9EQP9WUtQY2oxkYJRBumONuvfR8Fvtb0",
-            authDomain: "first-database-ff4ff.firebaseapp.com",
-            databaseURL: "https://first-database-ff4ff.firebaseio.com",
-            projectId: "first-database-ff4ff",
-            storageBucket: "first-database-ff4ff.appspot.com",
-            messagingSenderId: "154222296084"
-        };
-        firebase.initializeApp(config);
-    </script>
 </head>
 
 <body>
@@ -45,7 +31,7 @@
                         <tr>
                             <th scope="col">Train Name</th>
                             <th scope="col">Destination</th>
-                            <th scope="col">Frequencey (min)</th>
+                            <th scope="col">Frequency (min)</th>
                             <th scope="col">Next Arrival</th>
                             <th scope="col">Minutes Away</th>
                         </tr>
@@ -66,20 +52,24 @@
                 <input type="text" class="form-control" id="destination-input" placeholder="Destination">
             </div>
             <div class="form-group">
-                <label for="formGroupExampleInput2">First Train Time (HH:mm - military time)</label>
-                <input type="text" class="form-control" id="frequency-input" placeholder="Frequency (min)">
+                <label for="formGroupExampleInput3">First Train Time (HH:mm - military time)</label>
+                <input type="text" class="form-control" id="arrival-input" placeholder="First Train Time">
             </div>
             <div class="form-group">
-                <label for="formGroupExampleInput2">Frequency (min)</label>
-                <input type="text" class="form-control" id="arrival-input" placeholder="Next Arrival">
+                <label for="formGroupExampleInput4">Frequency (min)</label>
+                <input type="text" class="form-control" id="frequency-input" placeholder="Frequency(min)">
             </div>
         </form>
         <button type="button" class="btn btn-dark" id="submit">Submit</button>
     </div>
    
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-database.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.0.min.js" integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"></script>
     <script src="https://rawgit.com/moment/moment/2.2.1/min/moment.min.js"></script>
-    <script src="javascript.js"></script>
+    <script src="./assets/javascript/javascript.js"></script>
+    
 </body>
 
 </html>
