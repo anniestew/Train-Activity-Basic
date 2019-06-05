@@ -18,7 +18,6 @@ var destinationEntered = "";
 var frequencyTrain = "";
 var nextArrival = "";
 var nameEntered = "";
-var minutesAway = "";
 
 $("#submit").on("click", function(event) {
     event.preventDefault();
@@ -55,12 +54,25 @@ database.ref("Trains").on("child_added", function(childSnapshot) {
     var nameTd = $("<td>").text(newPost.name);
     var destinationTd = $("<td>").text(newPost.destination);
     var frequencyTd = $("<td>").text(newPost.frequency);
-    var arrivalTd = $("<td>").text(newPost.arrival);
-    var minutesTd = $("<td>").text("");
-    var overallTd = $("<td>").text("");
+
+    var currentTime = moment();
+    var firstTime = newPost.arrival;
+    var frequency = newPost.frequency;
+    
+    var diffTime = moment().diff(moment(firstTime, "HH:mm"), "minutes");
+        // console.log(diffTime);
+   
+    var timePassed = diffTime % frequency;
+    
+    var timeLeft = frequency - timePassed;
+        // console.log(timeLeft)
+    var nextTrain = moment().add(timeLeft, "minutes");
+    var nextTrainTime = $("<td>").text(moment(nextTrain).format("hh:mm"));
+        // console.log(nextTrain);
+    var minutesTd = $("<td>").text(timeLeft);
 
 
-    tRow.append(nameTd, destinationTd, frequencyTd, arrivalTd, minutesTd, overallTd);
+    tRow.append(nameTd, destinationTd, frequencyTd, nextTrainTime, minutesTd);
     tBody.append(tRow);
     $("#table").append(tBody);
 
